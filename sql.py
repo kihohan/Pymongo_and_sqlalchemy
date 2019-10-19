@@ -1,3 +1,6 @@
+from sqlalchemy import create_engine
+import pandas as pd
+
 # normal
 input_db = create_engine('해당IP', encoding = 'utf8' , 
                          pool_size=20,pool_recycle=3600,connect_args={'connect_timeout':10000} )
