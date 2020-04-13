@@ -1,3 +1,4 @@
+# _id 5만개이하로 사용.
 from multiprocessing import Pool, Process
 
 item_list = list (df['item_doc_id'].unique())
