@@ -1,3 +1,5 @@
+from multiprocessing import Pool, Process
+
 item_list = list (df['item_doc_id'].unique())
 n = int (len (item_list) / 31)
 list_split = [item_list[i * n:(i + 1) * n] for i in range((len(item_list) + n - 1) // n )] 
