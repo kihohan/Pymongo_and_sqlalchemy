@@ -16,3 +16,11 @@ def get_colt_item(chunk_cnt):
     return item_d
 with Pool(32) as pool:
     colt_item = pd.concat(pool.map(get_colt_item,chunk_cnt))
+
+    
+'''
+def chunks(lst, n):
+    """Yield successive n-sized chunks from lst."""
+    for i in range(0, len(lst), n):
+        yield lst[i:i + n]
+'''
