@@ -1,3 +1,4 @@
+# you make insert_data function
 def multi_insert_data(df, p_cnt = 10):
 
     def chunks(lst, n):
