@@ -1,0 +1,11 @@
+import pymongo
+import pandas as pd
+from bson.codec_options import TypeCodec
+
+client = pymongo.MongoClient(f'mongodb://host:port/?authSource=admin&readPreference=secondaryPreferred')
+mongodb = client['DB_NAME']
+
+curren_op = mongodb.current_op()
+inprog = pd.DataFrame(curren_op['inprog'])
+
+inprog.loc[(inprog['active'] == True) & (inprog['secs_running'] > 0) & (inprog['op'] == 'query')]['opid']
